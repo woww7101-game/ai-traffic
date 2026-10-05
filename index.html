@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AI Navigator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="map"></div>
+  <div class="topbar glass">
+    <div class="brand"><div class="brand-orb">AI</div><div><b>AI Navigator</b><span>умный навигатор</span></div></div>
+    <div class="search"><input id="destination" placeholder="Адрес, место или координаты..."><button id="searchBtn">➤</button></div>
+    <div class="map-toggle"><button data-layer="street" class="active">Карта</button><button data-layer="satellite">Спутник</button></div>
+  </div>
+  <aside class="side glass">
+    <div id="authBox">
+      <h3>Вход</h3><input id="email" type="email" placeholder="Email"><input id="password" type="password" placeholder="Пароль">
+      <div class="row"><button id="loginBtn">Войти</button><button id="registerBtn" class="secondary">Регистрация</button></div>
+    </div>
+    <div id="userBox" hidden><div class="muted" id="userEmail"></div><button id="historyBtn" class="secondary full">История маршрутов</button><button id="logoutBtn" class="secondary full">Выйти</button></div>
+    <div id="routePanel" class="route-panel" hidden><div class="route-title">Маршрут</div><div><b id="distance">—</b> · <b id="eta">—</b></div><div class="muted" id="routeDestination"></div><button id="startBtn" class="primary full">Начать маршрут</button></div>
+    <div id="weatherCard" class="weather glass" hidden></div>
+  </aside>
+  <div class="orb-wrap"><button id="orb" class="ai-orb"><span class="orb-core"></span><span class="orb-ring"></span></button><div id="orbStatus">Нажмите, чтобы говорить</div></div>
+  <div id="generatedImage" class="scene glass" hidden><button id="closeScene">×</button><img id="sceneImg"><div id="scenePlace"></div></div>
+  <div id="historyModal" class="modal" hidden><div class="modal-box glass"><button id="closeHistory">×</button><h2>История маршрутов</h2><div id="historyList"></div></div></div>
+  <div id="toast"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
